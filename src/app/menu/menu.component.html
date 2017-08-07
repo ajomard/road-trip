@@ -1,13 +1,13 @@
 <md-list>
-  <h3 md-subheader>General</h3>
-  <md-list-item *ngFor="let general of generals">
+  <h3 md-subheader>{{generals.title}}</h3>
+  <md-list-item *ngFor="let link of generals.links">
     <md-icon md-list-icon>keyboard_arrow_right</md-icon>
-    <h4 md-line>{{general.title}}</h4>
+    <h4 md-line>{{link.title}}</h4>
   </md-list-item>
-  <h3 md-subheader>Etapes</h3>
-  <md-list-item>
+  <h3 md-subheader>{{days.title}}</h3>
+  <md-list-item *ngFor ="let day of days.days" [routerLink]="['/detail', day.dayNumber]">
     <md-icon md-list-icon>keyboard_arrow_right</md-icon>
-    <h4 md-line>Jour 1</h4>
-    <p md-line>Belfort-Lyon</p>
+    <h4 md-line>Jour {{day.dayNumber}}</h4>
+    <p md-line>{{day.start}} - {{day.end}}</p>
   </md-list-item>
 </md-list>
