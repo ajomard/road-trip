@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DayMenu } from '../day-menu';
+import { Day } from '../day';
 
 import { DayService } from '../day.service';
 
-const DAYS : DayMenu[] = [
-
-]
 
 @Component({
   selector: 'app-menu',

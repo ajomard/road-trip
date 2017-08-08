@@ -1,3 +1,43 @@
-<p>
-  detailed-day {{day.dayNumber}} works!
-</p>
+<div class="title">
+  <h1 class="mat-display-1">{{day?.start}} - {{day?.end}}</h1>
+  <h3 class="mat-typography">Jour {{day?.dayNumber}}</h3>
+</div>
+<div class="tabs">
+  <md-tab-group>
+    <md-tab label="Infos voyage" >
+      <md-icon md-list-icon></md-icon>
+      <div class="content">
+        <h3 md-line>Temps de trajet prévu</h3>
+        {{day?.info?.time}}
+        <h3 md-line>Distance prévue</h3>
+        {{day?.info?.distance}} km
+      </div>
+    </md-tab>
+    <md-tab label="La journée" class= "content">
+      <h2 class="mat-typography">Les villes traversées</h2>
+      <md-list>
+        <md-list-item *ngFor="let step of day?.info?.steps">
+          <md-icon md-list-icon>keyboard_arrow_right</md-icon>
+          <h3 md-line>{{step}}</h3>
+        </md-list-item>
+      </md-list>
+    </md-tab>
+    <md-tab label="Le soir" class="content">
+      <section class="mat-typography">
+
+      </section>
+    </md-tab>
+    <md-tab label="Info destination">
+    </md-tab>
+    <md-tab label="Bon plans destination">
+    </md-tab>
+    <md-tab label="Fun facts" class="content">
+      <md-list>
+        <md-list-item *ngFor="let fact of day?.funFacts">
+          <md-icon md-list-icon>keyboard_arrow_right</md-icon>
+          <h3 md-line>{{fact}}</h3>
+        </md-list-item>
+      </md-list>
+    </md-tab>
+  </md-tab-group>
+</div>

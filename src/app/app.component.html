@@ -6,12 +6,11 @@
     </button>
     {{title}}
   </md-toolbar>
-  <md-sidenav #sidenav mode="push" opened="true">
-    <app-menu></app-menu>
+  <md-sidenav #sidenav mode="side" opened="true">
+    <app-menu (click)="sidenav.close()"></app-menu>
   </md-sidenav>
 
-  <div class="my-content">
-    <app-welcome></app-welcome>
+  <div class="my-content" (click)="sidenav.close()">
     <router-outlet></router-outlet>
   </div>
 

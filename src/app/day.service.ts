@@ -12,7 +12,8 @@ export class DayService {
 
   getDay(id : number) : Promise<Day>{
     return this.getDays()
-      .then(days => days.find(day => day.dayNumber === id));
+      .then(days => days.find(day => day.dayNumber === id))
+      .catch(e => "ERROR");
   }
 
 }

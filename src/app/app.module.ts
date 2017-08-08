@@ -39,6 +39,11 @@ import { DetailedDayComponent } from './detailed-day/detailed-day.component';
       {
         path: 'detail/:id',
         component: DetailedDayComponent
+      },
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
       }
     ])
   ],

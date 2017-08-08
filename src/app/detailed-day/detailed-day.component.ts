@@ -12,7 +12,7 @@ import { DayService } from '../day.service';
   providers: [DayService]
 })
 export class DetailedDayComponent implements OnInit {
-  @Input()
+  //@Input()
   day : DayMenu;
 
   constructor(
